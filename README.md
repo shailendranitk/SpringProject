@@ -11,4 +11,7 @@ http://websystique.com/springmvc/spring-4-mvc-helloworld-tutorial-full-example/
 Facebook API
 https://developers.facebook.com/docs/graph-api 
 
+SQL Yog
+https://s3.amazonaws.com/SQLyog_Community/SQLyog+12.2.6/SQLyog-12.2.6-0.x64Community.exe
+
 
