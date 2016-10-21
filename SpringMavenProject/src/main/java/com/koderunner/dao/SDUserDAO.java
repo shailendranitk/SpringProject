@@ -10,11 +10,12 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import com.koderunner.vo.SDUserVO;
 
-public class SDUserDAO {
-	private static SessionFactory sessionFactory = null;  
+public class SDUserDAO extends HibernateDaoSupport {
+	/*private static SessionFactory sessionFactory = null;  
     private static ServiceRegistry serviceRegistry = null;  
        
     private static SessionFactory configureSessionFactory() throws HibernateException {  
@@ -24,18 +25,17 @@ public class SDUserDAO {
         serviceRegistry = new ServiceRegistryBuilder().applySettings(properties).buildServiceRegistry();          
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);  
         return sessionFactory;  
-    }
+    }*/
 	
 	 @SuppressWarnings("unchecked")
 	public Integer checkUser(String pEmailId, String pPassword) {
 	        Integer noofuser = 0;
 	        List<Integer> totuser = null;
 	        Transaction tx = null;
-	        Session session = null;
 	        // Configure the session factory
-	        configureSessionFactory();
+	      //  configureSessionFactory();
+	        Session session = getSessionFactory().openSession();
 	        try {
-	        	session = sessionFactory.openSession();
 	            tx = session.beginTransaction();
 	            totuser = session.createSQLQuery("SELECT count(*) FROM SDUSER_DETAILS where EMAIL_ID='" + pEmailId + "' and PASSWORD='" + pPassword + "'").list();
 	            String val = "" + totuser.get(0);
@@ -52,19 +52,16 @@ public class SDUserDAO {
 	 
 	 public void save(SDUserVO pUserDetails) {
 		 	Transaction tx = null;
-	        Session session = null;
-	        // Configure the session factory
-	        configureSessionFactory();
+		 	  Session session = getSessionFactory().openSession();
 	        try {
-	        	session = sessionFactory.openSession();
-	             tx = session.beginTransaction();
-	            session.saveOrUpdate(pUserDetails);
-	            tx.commit();
+	             	tx = session.beginTransaction();
+		            session.saveOrUpdate(pUserDetails);
+		            tx.commit();
 	        } catch (Exception e) {
-	            e.printStackTrace();
+	            	e.printStackTrace();
 	        } finally {
-	            session.clear();
-	            session.close();
+		            session.clear();
+		            session.close();
 	        }
 	    }
 

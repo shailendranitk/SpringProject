@@ -44,7 +44,7 @@ public class SDUserController {
             noofuser = userDAO.checkUser(emailId, password);
             if (noofuser > 0) {
                 session.setAttribute("emailId", emailId);
-                return new ModelAndView("../views/Welcome", map);
+                return new ModelAndView("../login/home", map);
             } else {
                 map.addAttribute("failmsg", "* Login failed please try again...");
                 return new ModelAndView("login", map);
@@ -53,18 +53,18 @@ public class SDUserController {
 
     }
     
-    @RequestMapping("/view/Welcome.htm")
-    public ModelAndView orgsubmit(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping("/login/welcome.htm")
+    public ModelAndView registrationSubmit(HttpServletRequest request, HttpServletResponse response) {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String UserName = request.getParameter("UserName");
         String emailId = request.getParameter("emailId");
         String password = request.getParameter("password");
        // String gender = request.getParameter("gender");
-        SDUserVO userdetails=new SDUserVO("abc123", firstName, lastName, password, emailId, UserName);
+        SDUserVO userdetails=new SDUserVO("abc1234", firstName, lastName, password, emailId, UserName);
         userDAO.save(userdetails);
         ModelMap modelMap = new ModelMap();
-        modelMap.addAttribute("UserName", UserName);
-        return new ModelAndView("../view/Welcome.htm", modelMap);
+        modelMap.addAttribute("UserName", emailId);
+        return new ModelAndView("../login/welcome", modelMap);
     }
 }

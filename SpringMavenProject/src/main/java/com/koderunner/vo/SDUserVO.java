@@ -9,13 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name = "SDUser_details", schema = "scrapdeal")
+@Table(name = "SDUser_details", schema = "marrygold")
 public class SDUserVO implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	 private Integer SNo;
 	 private String loginId;
      private String firstName;
      private String lastName;
@@ -34,10 +35,18 @@ public class SDUserVO implements Serializable{
  		this.emailId = emailId;
  		this.userName = userName;
  	}
-     
      @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
      
-    @Column(name="LOGIN_ID", unique=true, length=100) 
+    @Column(name="S_NO", unique=true, nullable=false)
+    public Integer getSNo() {
+		return SNo;
+	}
+
+	public void setSNo(Integer sNo) {
+		SNo = sNo;
+	}
+
+    @Column(name="LOGIN_ID", length=100) 
 	public String getLoginId() {
 		return loginId;
 	}

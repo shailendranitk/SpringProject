@@ -6,10 +6,10 @@
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.url">jdbc:mysql://locahost:3306/scrapdeal?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/marrygold?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property>
         <!--<property name="connection.url">jdbc:mysql://localhost:5543/tms?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</property>-->
         <property name="connection.username">root</property>
-        <property name="connection.password">great@123</property>
+        <property name="connection.password">system@25255</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="c3p0.acquire_increment">1</property>
         <property name="c3p0.idle_test_period">3000</property>

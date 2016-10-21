@@ -1,14 +1,10 @@
-<!-- <html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
 <body>
-<h2>Admin Login</h2>
-<form action="/SpringMavenProject/LoginUser" method="post">
-Login Id : <input name="name" type="text"/><br/><br/>
-Password : <input name="password" type="password"/><br/><br/>
-<input type="submit" value="Login"/>
-</form>
+<h2><b><font size="5" color="blue">MarryGold</font></b></h2>
+<a href="login/login.jsp">LOGIN</a>
+<a href="login/userRegistration.jsp">REGISTER</a>
 </body>
-</html> -->
-
-<a href="login/login.htm">LOGIN</a>
-<a href="login/userRegistration.htm">REGISTER</a>
-<%-- <% response.sendRedirect("login/login.htm"); %> --%>
+</html>
