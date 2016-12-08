@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.koderunner.dao.SDUserDAO;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/SpringMavenProject/rest")
 public class SDRestController {
 
     
