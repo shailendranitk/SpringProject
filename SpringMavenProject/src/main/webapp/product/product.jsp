@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h2>Products Management</h2>
-	<form:form action="./product.do" method="POST" commandName="product">
+	<form:form action="/SpringMavenProject/product/product.do" method="POST" commandName="product">
 	<table class="table table-condensed" width="60%" >
 		<tr>
 			<td>Product Id</td>

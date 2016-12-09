@@ -1,7 +1,6 @@
 <html>
+<jsp:include page="../includes.jsp" />
 <body>
-<h2><b><font size="5" color="blue">MarryGold</font></b></h2>
-<br/><br/>
 <h3><b><font size="3" color="Green">REGISTRATION FORM</font></b></h3>
 <form action="../login/welcome.htm">
 	<table border="1">
