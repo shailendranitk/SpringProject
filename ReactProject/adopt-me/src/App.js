@@ -1,16 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 import SearchParams from "./SearchParams";
-import { Router } from "@reach/router";
+import { Link, Router } from "@reach/router";
 import Details from "./Details";
 
 function App() {
   return (
     <div>
-      <h1>
-        {" "}
-        <a href="/">Adopt Me!</a>{" "}
-      </h1>
+      <header>
+        <Link to="/">Adopt Me!</Link>
+      </header>
       <Router>
         <SearchParams path="/" />
         <Details path="/details/:id" />
